@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\unrealengineproject\\ue5tutorial\\firstproject\\source\\firstproject\\mypawn.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\unrealengineproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\x64\\firstprojecteditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "c:\\unrealengineproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\firstproject\\definitions.firstproject.h",
+            "c:\\unrealengineproject\\ue5tutorial\\firstproject\\source\\firstproject\\mypawn.h",
+            "c:\\unrealengineproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\unrealeditor\\inc\\firstproject\\uht\\mypawn.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

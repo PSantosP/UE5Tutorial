@@ -39,6 +39,27 @@
     <ClInclude Include="..\..\Source\FirstProject\FirstProject.h">
       <Filter>Source\FirstProject</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\FirstProject\MyActor.cpp">
+      <Filter>Source\FirstProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FirstProject\MyActor.h">
+      <Filter>Source\FirstProject</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FirstProject\MyPawn.cpp">
+      <Filter>Source\FirstProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FirstProject\MyPawn.h">
+      <Filter>Source\FirstProject</Filter>
+    </ClInclude>
+    <Filter Include="Source\FirstProject\GameMode">
+      <UniqueIdentifier>{B4B8F276-4CBC-3059-9131-5E3E66959C78}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\FirstProject\GameMode\MyGameModeBase.cpp">
+      <Filter>Source\FirstProject\GameMode</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FirstProject\GameMode\MyGameModeBase.h">
+      <Filter>Source\FirstProject\GameMode</Filter>
+    </ClInclude>
     <Filter Include="Source\FirstProject\Player">
       <UniqueIdentifier>{A393E180-707F-316F-948B-3F97FAF16AF0}</UniqueIdentifier>
     </Filter>
