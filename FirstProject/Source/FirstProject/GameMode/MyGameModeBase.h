@@ -13,5 +13,6 @@ UCLASS()
 class FIRSTPROJECT_API AMyGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+
+	AMyGameModeBase();
 };

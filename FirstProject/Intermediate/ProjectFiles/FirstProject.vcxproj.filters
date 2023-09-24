@@ -51,6 +51,15 @@
     <ClInclude Include="..\..\Source\FirstProject\MyPawn.h">
       <Filter>Source\FirstProject</Filter>
     </ClInclude>
+    <Filter Include="Source\FirstProject\Anim">
+      <UniqueIdentifier>{47CAFC08-DA6F-3EB2-9B8D-8A74C03C1AA3}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\FirstProject\Anim\MyAnimInstance.cpp">
+      <Filter>Source\FirstProject\Anim</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FirstProject\Anim\MyAnimInstance.h">
+      <Filter>Source\FirstProject\Anim</Filter>
+    </ClInclude>
     <Filter Include="Source\FirstProject\GameMode">
       <UniqueIdentifier>{B4B8F276-4CBC-3059-9131-5E3E66959C78}</UniqueIdentifier>
     </Filter>
@@ -63,6 +72,12 @@
     <Filter Include="Source\FirstProject\Player">
       <UniqueIdentifier>{A393E180-707F-316F-948B-3F97FAF16AF0}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\FirstProject\Player\MyCharacter.cpp">
+      <Filter>Source\FirstProject\Player</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FirstProject\Player\MyCharacter.h">
+      <Filter>Source\FirstProject\Player</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\FirstProject\Player\PlayerCharacter.cpp">
       <Filter>Source\FirstProject\Player</Filter>
     </ClCompile>

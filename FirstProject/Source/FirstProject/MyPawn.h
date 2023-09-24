@@ -26,7 +26,14 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	void MoveForward(float Value);
+	void MoveRight(float Value);
+
 protected:
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* Mesh;
+
+	// 이렇게 못찾았을 때는 전방선언을 해줘서 Cpp에다가는 포함시키면 된다.
+	UPROPERTY(VisibleAnywhere)
+	class UFloatingPawnMovement* Movement;
 };
