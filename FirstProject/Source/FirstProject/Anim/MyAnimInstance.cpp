@@ -4,6 +4,7 @@
 #include "FirstProject/Anim/MyAnimInstance.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/PawnMovementComponent.h"
+#include "FirstProject\Player\MyCharacter.h"
 
 UMyAnimInstance::UMyAnimInstance()
 {
@@ -27,10 +28,13 @@ void UMyAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 		// 폰의 속도의 크기를 Speed에 집어넣는다.
 		Speed = Pawn->GetVelocity().Size();
 
-		auto Character = Cast<ACharacter>(Pawn);
+		auto Character = Cast<AMyCharacter>(Pawn);
 		if (Character)
 		{
 			IsFalling = Character->GetMovementComponent()->IsFalling();
+
+			Vertical = Character->MoveForwardValue;
+			Horizontal = Character->MoveRightValue;
 		}
 	}
 }
@@ -57,7 +61,9 @@ FName UMyAnimInstance::GetAttackMontageName(int32 SectionIndex)
 
 void UMyAnimInstance::AnimNotify_AttackHit()
 {
-	UE_LOG(LogTemp, Log, TEXT("AnimNotify_AttackHit"));
+	//UE_LOG(LogTemp, Log, TEXT("AnimNotify_AttackHit"));
+	// OnAttackHit를 구독하고 Broadcast라는 메시지를 받는다.
+	OnAttackHit.Broadcast();
 }
 
 

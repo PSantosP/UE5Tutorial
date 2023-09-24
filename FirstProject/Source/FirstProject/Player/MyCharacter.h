@@ -19,6 +19,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	virtual void PostInitializeComponents() override;
+
 
 public:	
 	// Called every frame
@@ -28,6 +30,7 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void Attack();
+	void AttackCheck();
 
 	void MoveForward(float Value);
 	void MoveRight(float Value);
@@ -52,4 +55,10 @@ protected:
 
 	UPROPERTY()
 	int32 AttackIndex = 0;
+
+public:
+	UPROPERTY()
+	float MoveForwardValue= 0;
+	UPROPERTY()
+	float MoveRightValue = 0;
 };

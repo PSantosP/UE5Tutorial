@@ -7,6 +7,7 @@
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include <FirstProject\Anim\MyAnimInstance.h>
+#include "Debug/DebugDrawComponent.h"
 
 // Sets default values
 AMyCharacter::AMyCharacter()
@@ -44,9 +45,20 @@ AMyCharacter::AMyCharacter()
 void AMyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+}
+
+void AMyCharacter::PostInitializeComponents()
+{
+	// BeginPlay보다 전에 시작됨
+	Super::PostInitializeComponents();
 
 	AnimInstance = Cast<UMyAnimInstance>(GetMesh()->GetAnimInstance());
-	AnimInstance->OnMontageEnded.AddDynamic(this, &AMyCharacter::OnAttackMontageEnded);
+	if (AnimInstance)
+	{
+		// 몽타주가 끝나면 AddDynamic에 되어있는 함수를 실행시켜라(델리게이트)
+		AnimInstance->OnMontageEnded.AddDynamic(this, &AMyCharacter::OnAttackMontageEnded);
+		AnimInstance->OnAttackHit.AddUObject(this, &AMyCharacter::AttackCheck);
+	}
 }
 
 // Called every frame
@@ -92,19 +104,67 @@ void AMyCharacter::Attack()
 	IsAttacking = true;
 }
 
+void AMyCharacter::AttackCheck()
+{
+	FHitResult HitResult;
+	FCollisionQueryParams Params(NAME_None, false, this);
+
+	float AttackRange = 100.f;
+	float AttackRadius = 50.f;
+
+	// 채널을 이용해서 Sweep하겠다.
+	bool bResult = GetWorld()->SweepSingleByChannel(
+		OUT HitResult,
+		GetActorLocation(),
+		GetActorLocation() + GetActorForwardVector() * AttackRange,
+		FQuat::Identity,
+		ECollisionChannel::ECC_EngineTraceChannel2,
+		FCollisionShape::MakeSphere(AttackRadius),
+		Params);
+
+	FVector Vec = GetActorForwardVector() * AttackRange;
+	FVector Center = GetActorLocation() + Vec * 0.5f;
+	float HalfHeight = AttackRange * 0.5f + AttackRadius;
+	FQuat Rotation = FRotationMatrix::MakeFromZ(Vec).ToQuat();
+	FColor DrawColor;
+	if (bResult)
+		DrawColor = FColor::Green;
+	else
+		DrawColor = FColor::Red;
+
+	DrawDebugCapsule(GetWorld(), Center, HalfHeight, AttackRadius,
+		Rotation, DrawColor, false, 2.f);
+
+	if (bResult && HitResult.GetActor())
+	{
+		UE_LOG(LogTemp, Log, TEXT("Hit Actor : %s"), *HitResult.GetActor()->GetName());
+	}
+}
+
 void AMyCharacter::MoveForward(float Value)
 {
-	if (Value == 0.f) return;
-	if (IsAttacking == true) return;
+	//if (Value == 0.f) return;
+	if (IsAttacking == true)
+	{
+		MoveForwardValue = 0.f;
+		return;
+	}
 	/*UE_LOG(LogTemp, Warning, TEXT("MoveForward %f"), Value);*/
+
+	MoveForwardValue = Value;
 	AddMovementInput(GetActorForwardVector(), Value);
 }
 
 void AMyCharacter::MoveRight(float Value)
 {
-	if (Value == 0.f) return;
-	if (IsAttacking == true) return;
+	/*if (Value == 0.f) return;*/
+	if (IsAttacking == true)
+	{
+		MoveRightValue = 0.f;
+		return;
+	}
 	/*UE_LOG(LogTemp, Warning, TEXT("MoveRight %f"), Value);*/
+	MoveRightValue = Value;
 	AddMovementInput(GetActorRightVector(), Value);
 }
 

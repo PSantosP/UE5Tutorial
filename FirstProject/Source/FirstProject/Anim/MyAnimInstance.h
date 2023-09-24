@@ -6,6 +6,10 @@
 #include "Animation/AnimInstance.h"
 #include "MyAnimInstance.generated.h"
 
+// C++에서 델리게이트를 지원하지 않지만 언리얼에서 만들어 놓았다.
+
+DECLARE_MULTICAST_DELEGATE(FOnAttackHit);
+
 /**
  * 
  */
@@ -40,4 +44,13 @@ private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Pawn, Meta = (AllowPrivateAccess = true))
 	UAnimMontage* AttackMontage;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Pawn, Meta = (AllowPrivateAccess = true))
+	float Horizontal;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Pawn, Meta = (AllowPrivateAccess = true))
+	float Vertical;
+
+public:
+	FOnAttackHit OnAttackHit;
 };
