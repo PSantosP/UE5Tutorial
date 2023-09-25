@@ -18,7 +18,7 @@ AMyGameModeBase::AMyGameModeBase()
 
 	// 블루프린트 클ㄹ래스를 불러오는데에 있어서 마지막에 무조건 _C를 붙여야 한다.
 	// 이것은 언리얼 규칙이기에 꼭 해야한다.
-	static ConstructorHelpers::FClassFinder<ACharacter> BP_Char(TEXT("/Script/Engine.Blueprint'/Game/Blueprints/BP_MyCharacter.BP_MyCharacter'_C'"));
+	static ConstructorHelpers::FClassFinder<ACharacter> BP_Char(TEXT("/Script/Engine.Blueprint'/Game/Blueprints/BP_MyCharacter.BP_MyCharacter_C'"));
 
 	if (BP_Char.Succeeded())
 	{

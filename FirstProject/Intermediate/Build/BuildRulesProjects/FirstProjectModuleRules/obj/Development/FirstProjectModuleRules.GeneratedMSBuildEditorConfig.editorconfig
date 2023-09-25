@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FirstProjectModuleRules
-build_property.ProjectDir = C:\UnrealProject\UE5Tutorial\FirstProject\Intermediate\Build\BuildRulesProjects\FirstProjectModuleRules\
+build_property.ProjectDir = C:\UnrealEngineProject\UE5Tutorial\FirstProject\Intermediate\Build\BuildRulesProjects\FirstProjectModuleRules\

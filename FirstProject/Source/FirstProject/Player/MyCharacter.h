@@ -61,4 +61,7 @@ public:
 	float MoveForwardValue= 0;
 	UPROPERTY()
 	float MoveRightValue = 0;
+
+	UPROPERTY(VIsibleAnywhere)
+	UStaticMeshComponent* Weapon;
 };

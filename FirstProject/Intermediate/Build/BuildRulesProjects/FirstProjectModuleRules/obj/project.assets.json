@@ -8064,23 +8064,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\thost\\.nuget\\packages\\": {},
+    "C:\\Users\\santos\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\UnrealProject\\UE5Tutorial\\FirstProject\\Intermediate\\Build\\BuildRulesProjects\\FirstProjectModuleRules\\FirstProjectModuleRules.csproj",
+      "projectUniqueName": "C:\\UnrealEngineProject\\UE5Tutorial\\FirstProject\\Intermediate\\Build\\BuildRulesProjects\\FirstProjectModuleRules\\FirstProjectModuleRules.csproj",
       "projectName": "FirstProjectModuleRules",
-      "projectPath": "C:\\UnrealProject\\UE5Tutorial\\FirstProject\\Intermediate\\Build\\BuildRulesProjects\\FirstProjectModuleRules\\FirstProjectModuleRules.csproj",
-      "packagesPath": "C:\\Users\\thost\\.nuget\\packages\\",
-      "outputPath": "C:\\UnrealProject\\UE5Tutorial\\FirstProject\\Intermediate\\Build\\BuildRulesProjects\\FirstProjectModuleRules\\obj\\",
+      "projectPath": "C:\\UnrealEngineProject\\UE5Tutorial\\FirstProject\\Intermediate\\Build\\BuildRulesProjects\\FirstProjectModuleRules\\FirstProjectModuleRules.csproj",
+      "packagesPath": "C:\\Users\\santos\\.nuget\\packages\\",
+      "outputPath": "C:\\UnrealEngineProject\\UE5Tutorial\\FirstProject\\Intermediate\\Build\\BuildRulesProjects\\FirstProjectModuleRules\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\thost\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

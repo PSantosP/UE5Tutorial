@@ -51,6 +51,15 @@
     <ClInclude Include="..\..\Source\FirstProject\MyPawn.h">
       <Filter>Source\FirstProject</Filter>
     </ClInclude>
+    <Filter Include="Source\FirstProject\Actor">
+      <UniqueIdentifier>{4CFDD8C4-D489-3A56-A463-BB4F8E1B242B}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\FirstProject\Actor\MyWeapon.cpp">
+      <Filter>Source\FirstProject\Actor</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FirstProject\Actor\MyWeapon.h">
+      <Filter>Source\FirstProject\Actor</Filter>
+    </ClInclude>
     <Filter Include="Source\FirstProject\Anim">
       <UniqueIdentifier>{47CAFC08-DA6F-3EB2-9B8D-8A74C03C1AA3}</UniqueIdentifier>
     </Filter>

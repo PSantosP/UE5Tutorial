@@ -8,6 +8,7 @@
 #include "Components/CapsuleComponent.h"
 #include <FirstProject\Anim\MyAnimInstance.h>
 #include "Debug/DebugDrawComponent.h"
+#include "FirstProject/Actor/MyWeapon.h"
 
 // Sets default values
 AMyCharacter::AMyCharacter()
@@ -39,12 +40,36 @@ AMyCharacter::AMyCharacter()
 		// GetMesh를 통해 수정
 		GetMesh()->SetSkeletalMesh(SM.Object);
 	}
+
+	//FName WeaponSocket(TEXT("hand_l_socket"));
+	//if (GetMesh()->DoesSocketExist(WeaponSocket))
+	//{
+	//	Weapon = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("WEAPON"));
+	//	static ConstructorHelpers::FObjectFinder<UStaticMesh> SW(TEXT("/Script/Engine.StaticMesh'/Engine/EditorResources/FieldNodes/_Resources/SM_FieldArrow.SM_FieldArrow'"));
+	//	if (SW.Succeeded())
+	//	{
+	//		Weapon->SetStaticMesh(SW.Object);
+	//	}
+
+	//	Weapon->SetupAttachment(GetMesh(), WeaponSocket);
+	//}
 }
 
 // Called when the game starts or when spawned
 void AMyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	FName WeaponSocket(TEXT("hand_l_socket"));
+
+	auto DropWeapon = GetWorld()->SpawnActor<AMyWeapon>(FVector::ZeroVector, FRotator::ZeroRotator);
+
+	if (DropWeapon)
+	{
+		//DropWeapon->AttachToComponent(GetMesh(),
+		//	FAttachmentTransformRules::SnapToTargetNotIncludingScale,
+		//	WeaponSocket);
+	}
 }
 
 void AMyCharacter::PostInitializeComponents()
@@ -87,9 +112,11 @@ void AMyCharacter::Attack()
 {
 	if (IsAttacking)
 	{
-		return;
+		if (AnimInstance->Montage_IsPlaying(AnimInstance->AttackMontage))
+		{
+			AnimInstance->Montage_Stop(0.0f, AnimInstance->AttackMontage);
+		}
 	}
-
 	//auto AnimInstance = Cast<UMyAnimInstance>(GetMesh()->GetAnimInstance());
 	//if (AnimInstance)
 	//{
@@ -100,8 +127,9 @@ void AMyCharacter::Attack()
 	AnimInstance->JumpToSection(AttackIndex);
 
 	AttackIndex = (AttackIndex + 1) % 3;
-
+	
 	IsAttacking = true;
+	UE_LOG(LogTemp, Log, TEXT("AttackCheck %s"), (IsAttacking ? TEXT("true") : TEXT("false")));
 }
 
 void AMyCharacter::AttackCheck()
@@ -144,12 +172,13 @@ void AMyCharacter::AttackCheck()
 void AMyCharacter::MoveForward(float Value)
 {
 	//if (Value == 0.f) return;
+	
 	if (IsAttacking == true)
 	{
 		MoveForwardValue = 0.f;
 		return;
 	}
-	/*UE_LOG(LogTemp, Warning, TEXT("MoveForward %f"), Value);*/
+	//UE_LOG(LogTemp, Warning, TEXT("MoveForward %f"), Value);
 
 	MoveForwardValue = Value;
 	AddMovementInput(GetActorForwardVector(), Value);
@@ -158,6 +187,7 @@ void AMyCharacter::MoveForward(float Value)
 void AMyCharacter::MoveRight(float Value)
 {
 	/*if (Value == 0.f) return;*/
+	//UE_LOG(LogTemp, Log, TEXT("IsAttacking %s"), IsAttacking);
 	if (IsAttacking == true)
 	{
 		MoveRightValue = 0.f;
@@ -188,5 +218,7 @@ void AMyCharacter::LookUp(float Value)
 
 void AMyCharacter::OnAttackMontageEnded(UAnimMontage* Montage, bool bInterrupted)
 {
+	if (IsAttacking == false) return;
 	IsAttacking = false;
+	UE_LOG(LogTemp, Log, TEXT("MontageEnd %s"), (IsAttacking ? TEXT("true") : TEXT("false")));
 }
