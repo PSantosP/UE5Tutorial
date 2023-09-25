@@ -9,6 +9,8 @@
 #include <FirstProject\Anim\MyAnimInstance.h>
 #include "Debug/DebugDrawComponent.h"
 #include "FirstProject/Actor/MyWeapon.h"
+#include "FirstProject/Actor/MyStatComponent.h"
+#include "Engine/DamageEvents.h"
 
 // Sets default values
 AMyCharacter::AMyCharacter()
@@ -41,18 +43,7 @@ AMyCharacter::AMyCharacter()
 		GetMesh()->SetSkeletalMesh(SM.Object);
 	}
 
-	//FName WeaponSocket(TEXT("hand_l_socket"));
-	//if (GetMesh()->DoesSocketExist(WeaponSocket))
-	//{
-	//	Weapon = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("WEAPON"));
-	//	static ConstructorHelpers::FObjectFinder<UStaticMesh> SW(TEXT("/Script/Engine.StaticMesh'/Engine/EditorResources/FieldNodes/_Resources/SM_FieldArrow.SM_FieldArrow'"));
-	//	if (SW.Succeeded())
-	//	{
-	//		Weapon->SetStaticMesh(SW.Object);
-	//	}
-
-	//	Weapon->SetupAttachment(GetMesh(), WeaponSocket);
-	//}
+	Stat = CreateDefaultSubobject<UMyStatComponent>(TEXT("STAT"));
 }
 
 // Called when the game starts or when spawned
@@ -166,6 +157,9 @@ void AMyCharacter::AttackCheck()
 	if (bResult && HitResult.GetActor())
 	{
 		UE_LOG(LogTemp, Log, TEXT("Hit Actor : %s"), *HitResult.GetActor()->GetName());
+
+		FDamageEvent DamageEvent;
+		HitResult.GetActor()->TakeDamage(Stat->GetAttack(), DamageEvent, GetController(), this);
 	}
 }
 
@@ -221,4 +215,11 @@ void AMyCharacter::OnAttackMontageEnded(UAnimMontage* Montage, bool bInterrupted
 	if (IsAttacking == false) return;
 	IsAttacking = false;
 	UE_LOG(LogTemp, Log, TEXT("MontageEnd %s"), (IsAttacking ? TEXT("true") : TEXT("false")));
+}
+
+float AMyCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
+{
+	Stat->OnAttacked(DamageAmount);
+
+	return DamageAmount;
 }

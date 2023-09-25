@@ -54,6 +54,12 @@
     <Filter Include="Source\FirstProject\Actor">
       <UniqueIdentifier>{4CFDD8C4-D489-3A56-A463-BB4F8E1B242B}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\FirstProject\Actor\MyStatComponent.cpp">
+      <Filter>Source\FirstProject\Actor</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FirstProject\Actor\MyStatComponent.h">
+      <Filter>Source\FirstProject\Actor</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\FirstProject\Actor\MyWeapon.cpp">
       <Filter>Source\FirstProject\Actor</Filter>
     </ClCompile>
@@ -77,6 +83,15 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\FirstProject\GameMode\MyGameModeBase.h">
       <Filter>Source\FirstProject\GameMode</Filter>
+    </ClInclude>
+    <Filter Include="Source\FirstProject\Instacne">
+      <UniqueIdentifier>{A4E69F5C-3DE6-3023-A19B-F311515849E7}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\FirstProject\Instacne\MyGameInstance.cpp">
+      <Filter>Source\FirstProject\Instacne</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FirstProject\Instacne\MyGameInstance.h">
+      <Filter>Source\FirstProject\Instacne</Filter>
     </ClInclude>
     <Filter Include="Source\FirstProject\Player">
       <UniqueIdentifier>{A393E180-707F-316F-948B-3F97FAF16AF0}</UniqueIdentifier>

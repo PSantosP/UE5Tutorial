@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\unrealengineproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\unrealeditor\\inc\\firstproject\\uht\\mycharacter.gen.cpp",
+        "Source": "c:\\unrealproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\unrealeditor\\inc\\firstproject\\uht\\mycharacter.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\unrealengineproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\x64\\firstprojecteditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "PCH": "c:\\unrealproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\x64\\firstprojecteditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
         "Includes": [
-            "c:\\unrealengineproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\firstproject\\definitions.firstproject.h",
-            "c:\\unrealengineproject\\ue5tutorial\\firstproject\\source\\firstproject\\player\\mycharacter.h",
+            "c:\\unrealproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\firstproject\\definitions.firstproject.h",
+            "c:\\unrealproject\\ue5tutorial\\firstproject\\source\\firstproject\\player\\mycharacter.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\experimental\\iris\\core\\public\\iris\\serialization\\irisobjectreferencepackagemap.h",
@@ -15,7 +15,7 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\rootmotionsource.generated.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\character.generated.h",
-            "c:\\unrealengineproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\unrealeditor\\inc\\firstproject\\uht\\mycharacter.generated.h"
+            "c:\\unrealproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\unrealeditor\\inc\\firstproject\\uht\\mycharacter.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

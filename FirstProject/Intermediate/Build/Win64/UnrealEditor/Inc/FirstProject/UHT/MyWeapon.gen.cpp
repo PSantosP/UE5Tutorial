@@ -216,15 +216,15 @@ void EmptyLinkFunctionForGeneratedCodeMyWeapon() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AMyWeapon);
 	AMyWeapon::~AMyWeapon() {}
-	struct Z_CompiledInDeferFile_FID_UnrealEngineProject_UE5Tutorial_FirstProject_Source_FirstProject_Actor_MyWeapon_h_Statics
+	struct Z_CompiledInDeferFile_FID_UnrealProject_UE5Tutorial_FirstProject_Source_FirstProject_Actor_MyWeapon_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealEngineProject_UE5Tutorial_FirstProject_Source_FirstProject_Actor_MyWeapon_h_Statics::ClassInfo[] = {
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_UE5Tutorial_FirstProject_Source_FirstProject_Actor_MyWeapon_h_Statics::ClassInfo[] = {
 		{ Z_Construct_UClass_AMyWeapon, AMyWeapon::StaticClass, TEXT("AMyWeapon"), &Z_Registration_Info_UClass_AMyWeapon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyWeapon), 1734150420U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealEngineProject_UE5Tutorial_FirstProject_Source_FirstProject_Actor_MyWeapon_h_3913471855(TEXT("/Script/FirstProject"),
-		Z_CompiledInDeferFile_FID_UnrealEngineProject_UE5Tutorial_FirstProject_Source_FirstProject_Actor_MyWeapon_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealEngineProject_UE5Tutorial_FirstProject_Source_FirstProject_Actor_MyWeapon_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_UE5Tutorial_FirstProject_Source_FirstProject_Actor_MyWeapon_h_3913471855(TEXT("/Script/FirstProject"),
+		Z_CompiledInDeferFile_FID_UnrealProject_UE5Tutorial_FirstProject_Source_FirstProject_Actor_MyWeapon_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_UE5Tutorial_FirstProject_Source_FirstProject_Actor_MyWeapon_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
