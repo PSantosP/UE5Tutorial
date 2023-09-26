@@ -43,6 +43,7 @@ AMyCharacter::AMyCharacter()
 		GetMesh()->SetSkeletalMesh(SM.Object);
 	}
 
+	// 스탯의 인스턴스를 가져와 넣어준다.
 	Stat = CreateDefaultSubobject<UMyStatComponent>(TEXT("STAT"));
 }
 

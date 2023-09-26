@@ -3,7 +3,7 @@
 
 #include "FirstProject/Actor/MyStatComponent.h"
 #include "FirstProject/Instacne/MyGameInstance.h"
-#include "Kismet/GameplayStatics.h"
+#include "Kismet/GameplayStatics.h"			// 싱글톤을 사용 할 수 있는 헤더
 
 // Sets default values for this component's properties
 UMyStatComponent::UMyStatComponent()
@@ -34,18 +34,23 @@ void UMyStatComponent::InitializeComponent()
 {
 	Super::InitializeComponent();
 
+	// 레벨을 설정해준다.
 	SetLevel(Level);
 }
 
 void UMyStatComponent::SetLevel(int32 NewLevel)
 {
 	// GetGameInstance 싱글톤처럼 불러올 수 있는 함수
+	// MyGameInstance를 캐스팅해온다.
 	auto MyGameInstance = Cast<UMyGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
 	if (MyGameInstance)
 	{
+		// 레벨에 맞는 스탯 데이터를 가져온다.
 		auto StatData = MyGameInstance->GetStatData(Level);
 		if (StatData)
 		{
+			// 스탯 데이터가 있다면 정해준다.
+			// 이제 이 스탯으로 플레이어가 사용할 것.
 			Level = StatData->Level;
 			Hp = StatData->MaxHp;
 			Attack = StatData->Attack;
@@ -55,6 +60,7 @@ void UMyStatComponent::SetLevel(int32 NewLevel)
 
 void UMyStatComponent::OnAttacked(float DamageAmount)
 {
+	// 데미지가 들어오는데로 Hp를 깎아준다.
 	Hp -= DamageAmount;
 	if (Hp < 0)
 		Hp = 0;
