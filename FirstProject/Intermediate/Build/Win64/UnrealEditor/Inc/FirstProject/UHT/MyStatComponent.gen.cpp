@@ -37,6 +37,10 @@ void EmptyLinkFunctionForGeneratedCodeMyStatComponent() {}
 #endif
 		static const UECodeGen_Private::FIntPropertyParams NewProp_Hp;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MaxHp_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_MaxHp;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Attack_MetaData[];
 #endif
 		static const UECodeGen_Private::FIntPropertyParams NewProp_Attack;
@@ -74,6 +78,14 @@ void EmptyLinkFunctionForGeneratedCodeMyStatComponent() {}
 #endif
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UMyStatComponent_Statics::NewProp_Hp = { "Hp", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMyStatComponent, Hp), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UMyStatComponent_Statics::NewProp_Hp_MetaData), Z_Construct_UClass_UMyStatComponent_Statics::NewProp_Hp_MetaData) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UMyStatComponent_Statics::NewProp_MaxHp_MetaData[] = {
+		{ "AllowPrivateAccess", "TRUE" },
+		{ "Category", "Stat" },
+		{ "ModuleRelativePath", "Actor/MyStatComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UMyStatComponent_Statics::NewProp_MaxHp = { "MaxHp", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMyStatComponent, MaxHp), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UMyStatComponent_Statics::NewProp_MaxHp_MetaData), Z_Construct_UClass_UMyStatComponent_Statics::NewProp_MaxHp_MetaData) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UMyStatComponent_Statics::NewProp_Attack_MetaData[] = {
 		{ "AllowPrivateAccess", "TRUE" },
 		{ "Category", "Stat" },
@@ -84,6 +96,7 @@ void EmptyLinkFunctionForGeneratedCodeMyStatComponent() {}
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UMyStatComponent_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMyStatComponent_Statics::NewProp_Level,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMyStatComponent_Statics::NewProp_Hp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMyStatComponent_Statics::NewProp_MaxHp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMyStatComponent_Statics::NewProp_Attack,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UMyStatComponent_Statics::StaticCppClassTypeInfo = {
@@ -124,9 +137,9 @@ void EmptyLinkFunctionForGeneratedCodeMyStatComponent() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_UE5Tutorial_FirstProject_Source_FirstProject_Actor_MyStatComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UMyStatComponent, UMyStatComponent::StaticClass, TEXT("UMyStatComponent"), &Z_Registration_Info_UClass_UMyStatComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyStatComponent), 744942263U) },
+		{ Z_Construct_UClass_UMyStatComponent, UMyStatComponent::StaticClass, TEXT("UMyStatComponent"), &Z_Registration_Info_UClass_UMyStatComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyStatComponent), 3552939231U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_UE5Tutorial_FirstProject_Source_FirstProject_Actor_MyStatComponent_h_2931595141(TEXT("/Script/FirstProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_UE5Tutorial_FirstProject_Source_FirstProject_Actor_MyStatComponent_h_2732139128(TEXT("/Script/FirstProject"),
 		Z_CompiledInDeferFile_FID_UnrealProject_UE5Tutorial_FirstProject_Source_FirstProject_Actor_MyStatComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_UE5Tutorial_FirstProject_Source_FirstProject_Actor_MyStatComponent_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

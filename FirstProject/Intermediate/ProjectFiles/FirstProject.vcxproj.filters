@@ -66,6 +66,15 @@
     <ClInclude Include="..\..\Source\FirstProject\Actor\MyWeapon.h">
       <Filter>Source\FirstProject\Actor</Filter>
     </ClInclude>
+    <Filter Include="Source\FirstProject\AI">
+      <UniqueIdentifier>{B88FD06A-618E-3842-95EA-F730830A37E5}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\FirstProject\AI\MyAIController.cpp">
+      <Filter>Source\FirstProject\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FirstProject\AI\MyAIController.h">
+      <Filter>Source\FirstProject\AI</Filter>
+    </ClInclude>
     <Filter Include="Source\FirstProject\Anim">
       <UniqueIdentifier>{47CAFC08-DA6F-3EB2-9B8D-8A74C03C1AA3}</UniqueIdentifier>
     </Filter>
@@ -107,6 +116,15 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\FirstProject\Player\PlayerCharacter.h">
       <Filter>Source\FirstProject\Player</Filter>
+    </ClInclude>
+    <Filter Include="Source\FirstProject\UI">
+      <UniqueIdentifier>{344349C1-3EC7-35EB-BD3A-CF8E43A72988}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\FirstProject\UI\MyCharacterWidget.cpp">
+      <Filter>Source\FirstProject\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FirstProject\UI\MyCharacterWidget.h">
+      <Filter>Source\FirstProject\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

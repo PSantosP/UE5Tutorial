@@ -3,7 +3,7 @@
     "Data": {
         "Source": "c:\\unrealproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\unrealeditor\\inc\\firstproject\\uht\\firstproject.init.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\unrealproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\x64\\firstprojecteditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "PCH": "c:\\unrealproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\x64\\firstprojecteditor\\development\\unrealed\\sharedpch.unrealed.cpp20.h.pch",
         "Includes": [
             "c:\\unrealproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\firstproject\\definitions.firstproject.h"
         ],

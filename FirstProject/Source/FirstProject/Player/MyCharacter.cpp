@@ -11,6 +11,9 @@
 #include "FirstProject/Actor/MyWeapon.h"
 #include "FirstProject/Actor/MyStatComponent.h"
 #include "Engine/DamageEvents.h"
+#include "Components/WidgetComponent.h"
+#include <FirstProject\UI\MyCharacterWidget.h>
+#include "FirstProject\AI\MyAIController.h"
 
 // Sets default values
 AMyCharacter::AMyCharacter()
@@ -45,6 +48,33 @@ AMyCharacter::AMyCharacter()
 
 	// 스탯의 인스턴스를 가져와 넣어준다.
 	Stat = CreateDefaultSubobject<UMyStatComponent>(TEXT("STAT"));
+
+	// HpBar 생성
+	// 에러가 날 시 위에 #include "Components/WidgetComponent.h"를 추가해주자
+	HpBar = CreateDefaultSubobject<UWidgetComponent>(TEXT("HPBAR"));
+	HpBar->SetupAttachment(GetMesh());
+	HpBar->SetRelativeLocation(FVector(0.f, 0.f, 200.f));
+
+	// World와 Screen두개의 형태가 있다.
+	HpBar->SetWidgetSpace(EWidgetSpace::Screen);
+
+	// 유저 위젯을 가져온다.
+	// 블루프린트 클래스를 가져오려면 항상 _C가 붙어야 한다.
+	static ConstructorHelpers::FClassFinder<UUserWidget> UW(TEXT("/Script/UMGEditor.WidgetBlueprint'/Game/UI/WBP_HpBar.WBP_HpBar_C'"));
+
+	// 클래스를 제대로 불러왔다면
+	if (UW.Succeeded())
+	{
+		// HpBar의 위젯클래스를 우리가 불러온 클래스로 설정 해준 후
+		// 사이즈를 우리가 커스텀한 사이즈로 초기화 시켜준다.
+		HpBar->SetWidgetClass(UW.Class);
+		HpBar->SetDrawSize(FVector2D(200.f, 50.f));
+	}
+
+	// AIControllerClass를 우리가 만든 AMyAIController클래스로 기본으로 지정하겠다고 설정
+	AIControllerClass = AMyAIController::StaticClass();
+	// AutoPossesAI를 월드에 배치가 되거나 스폰이 되었을 때로 설정
+	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
 }
 
 // Called when the game starts or when spawned
@@ -76,6 +106,21 @@ void AMyCharacter::PostInitializeComponents()
 		AnimInstance->OnMontageEnded.AddDynamic(this, &AMyCharacter::OnAttackMontageEnded);
 		AnimInstance->OnAttackHit.AddUObject(this, &AMyCharacter::AttackCheck);
 	}
+
+	// 위젯 초기화
+	HpBar->InitWidget();
+	
+	// TODO
+	// 체력이 닳았을 때 델리게이트 바인딩을 해주는 역할을 추가해줘야 함
+	// 왜 UMyCharacterWidget으로 캐스팅 하게 되냐면
+	// 지금 현재 우리가 가지고 있는 HpBar는 UWidgetComponent이다.
+	// 그렇기에 우리는 UMyCharacterWidget에 있는 UpdateHp와 BindHp를 이용할 것이기 때문에
+	// UMyCharacterWidget 타입을 가져와야 한다.
+	auto HpWidget = Cast<UMyCharacterWidget>(HpBar->GetUserWidgetObject());
+
+	// 잘 불러왔다면 Bind를 초기화 한다.
+	if (HpWidget)
+		HpWidget->BindHp(Stat);
 }
 
 // Called every frame

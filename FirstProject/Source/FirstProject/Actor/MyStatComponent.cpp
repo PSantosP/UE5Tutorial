@@ -52,20 +52,29 @@ void UMyStatComponent::SetLevel(int32 NewLevel)
 			// 스탯 데이터가 있다면 정해준다.
 			// 이제 이 스탯으로 플레이어가 사용할 것.
 			Level = StatData->Level;
-			Hp = StatData->MaxHp;
+			SetHp(StatData->MaxHp);
+			MaxHp = StatData->MaxHp;
 			Attack = StatData->Attack;
 		}
 	}
 }
 
-void UMyStatComponent::OnAttacked(float DamageAmount)
+void UMyStatComponent::SetHp(int32 NewHp)
 {
-	// 데미지가 들어오는데로 Hp를 깎아준다.
-	Hp -= DamageAmount;
+	Hp = NewHp;
 	if (Hp < 0)
 		Hp = 0;
 
-	UE_LOG(LogTemp, Warning, TEXT("OnAttacked %d"), Hp);
+	// HP가 변했다고 알림
+	OnHpChanged.Broadcast();
+}
+
+void UMyStatComponent::OnAttacked(float DamageAmount)
+{
+	int32 NewHp = Hp - DamageAmount;
+	SetHp(NewHp);
+
+	//UE_LOG(LogTemp, Warning, TEXT("OnAttacked %d"), Hp);
 }
 
 
