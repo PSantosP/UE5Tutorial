@@ -1,0 +1,39 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.FirstProject.cpp.obj": [
+			"BTDecorator_CanAttack.gen.cpp.obj",
+			"BTService_SearchTarget.gen.cpp.obj",
+			"BTTask_Attack.gen.cpp.obj",
+			"BTTask_FindPartolPos.gen.cpp.obj",
+			"FirstProject.init.gen.cpp.obj",
+			"MyActor.gen.cpp.obj",
+			"MyAIController.gen.cpp.obj",
+			"MyAnimInstance.gen.cpp.obj",
+			"MyCharacter.gen.cpp.obj",
+			"MyCharacterWidget.gen.cpp.obj",
+			"MyGameInstance.gen.cpp.obj",
+			"MyGameModeBase.gen.cpp.obj",
+			"MyPawn.gen.cpp.obj",
+			"MyStatComponent.gen.cpp.obj",
+			"MyWeapon.gen.cpp.obj",
+			"PlayerCharacter.gen.cpp.obj",
+			"MyStatComponent.cpp.obj",
+			"MyWeapon.cpp.obj",
+			"BTDecorator_CanAttack.cpp.obj",
+			"BTService_SearchTarget.cpp.obj",
+			"BTTask_FindPartolPos.cpp.obj",
+			"MyAIController.cpp.obj",
+			"MyAnimInstance.cpp.obj",
+			"FirstProject.cpp.obj",
+			"MyGameModeBase.cpp.obj",
+			"MyGameInstance.cpp.obj",
+			"MyActor.cpp.obj",
+			"MyPawn.cpp.obj",
+			"PlayerCharacter.cpp.obj",
+			"MyCharacterWidget.cpp.obj",
+			"BTTask_Attack.cpp.obj",
+			"MyCharacter.cpp.obj"
+		]
+	}
+}

@@ -269,5 +269,8 @@ float AMyCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEve
 {
 	Stat->OnAttacked(DamageAmount);
 
+
+	UE_LOG(LogTemp, Warning, TEXT("TEST Text"));
+
 	return DamageAmount;
 }

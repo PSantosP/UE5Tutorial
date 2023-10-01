@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-FirstProject-8848.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\UnrealProject\UE5Tutorial\FirstProject\Intermediate\Build\Win64\x64\FirstProjectEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.h.obj"
+"C:\UnrealProject\UE5Tutorial\FirstProject\Intermediate\Build\Win64\x64\UnrealEditor\Development\FirstProject\Module.FirstProject.cpp.obj"
+"C:\UnrealProject\UE5Tutorial\FirstProject\Intermediate\Build\Win64\x64\UnrealEditor\Development\FirstProject\BTTask_Attack.cpp.obj"
+"C:\UnrealProject\UE5Tutorial\FirstProject\Intermediate\Build\Win64\x64\UnrealEditor\Development\FirstProject\MyCharacter.cpp.obj"
+"C:\UnrealProject\UE5Tutorial\FirstProject\Intermediate\Build\Win64\x64\UnrealEditor\Development\FirstProject\Default.rc2.res"
+/OUT:"C:\UnrealProject\UE5Tutorial\FirstProject\Intermediate\Build\Win64\x64\UnrealEditor\Development\FirstProject\UnrealEditor-FirstProject-8848.lib"
