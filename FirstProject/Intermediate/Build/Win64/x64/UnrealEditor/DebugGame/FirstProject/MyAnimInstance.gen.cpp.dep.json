@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\unrealproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\unrealeditor\\inc\\firstproject\\uht\\myaniminstance.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\unrealproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\x64\\firstprojecteditor\\debuggame\\unrealed\\sharedpch.unrealed.nonoptimized.cpp20.h.pch",
+        "Includes": [
+            "c:\\unrealproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\firstproject\\definitions.firstproject.h",
+            "c:\\unrealproject\\ue5tutorial\\firstproject\\source\\firstproject\\anim\\myaniminstance.h",
+            "c:\\unrealproject\\ue5tutorial\\firstproject\\intermediate\\build\\win64\\unrealeditor\\inc\\firstproject\\uht\\myaniminstance.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

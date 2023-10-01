@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "MyCharacter.generated.h"
 
+DECLARE_MULTICAST_DELEGATE(FOnAttackEnd);
+
 UCLASS()
 class FIRSTPROJECT_API AMyCharacter : public ACharacter
 {
@@ -31,6 +33,8 @@ public:
 
 	void Attack();
 	void AttackCheck();
+
+	FOnAttackEnd OnAttackEnd;
 
 	void MoveForward(float Value);
 	void MoveRight(float Value);

@@ -69,6 +69,30 @@
     <Filter Include="Source\FirstProject\AI">
       <UniqueIdentifier>{B88FD06A-618E-3842-95EA-F730830A37E5}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\FirstProject\AI\BTDecorator_CanAttack.cpp">
+      <Filter>Source\FirstProject\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FirstProject\AI\BTDecorator_CanAttack.h">
+      <Filter>Source\FirstProject\AI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FirstProject\AI\BTService_SearchTarget.cpp">
+      <Filter>Source\FirstProject\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FirstProject\AI\BTService_SearchTarget.h">
+      <Filter>Source\FirstProject\AI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FirstProject\AI\BTTask_Attack.cpp">
+      <Filter>Source\FirstProject\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FirstProject\AI\BTTask_Attack.h">
+      <Filter>Source\FirstProject\AI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FirstProject\AI\BTTask_FindPartolPos.cpp">
+      <Filter>Source\FirstProject\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FirstProject\AI\BTTask_FindPartolPos.h">
+      <Filter>Source\FirstProject\AI</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\FirstProject\AI\MyAIController.cpp">
       <Filter>Source\FirstProject\AI</Filter>
     </ClCompile>

@@ -84,14 +84,14 @@ void AMyCharacter::BeginPlay()
 
 	FName WeaponSocket(TEXT("hand_l_socket"));
 
-	auto DropWeapon = GetWorld()->SpawnActor<AMyWeapon>(FVector::ZeroVector, FRotator::ZeroRotator);
+	//auto DropWeapon = GetWorld()->SpawnActor<AMyWeapon>(FVector::ZeroVector, FRotator::ZeroRotator);
 
-	if (DropWeapon)
-	{
-		//DropWeapon->AttachToComponent(GetMesh(),
-		//	FAttachmentTransformRules::SnapToTargetNotIncludingScale,
-		//	WeaponSocket);
-	}
+	//if (DropWeapon)
+	//{
+	//	//DropWeapon->AttachToComponent(GetMesh(),
+	//	//	FAttachmentTransformRules::SnapToTargetNotIncludingScale,
+	//	//	WeaponSocket);
+	//}
 }
 
 void AMyCharacter::PostInitializeComponents()
@@ -147,13 +147,14 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 
 void AMyCharacter::Attack()
 {
-	if (IsAttacking)
-	{
-		if (AnimInstance->Montage_IsPlaying(AnimInstance->AttackMontage))
-		{
-			AnimInstance->Montage_Stop(0.0f, AnimInstance->AttackMontage);
-		}
-	}
+	if (IsAttacking == true) return;
+	//if (IsAttacking)
+	//{
+	//	if (AnimInstance->Montage_IsPlaying(AnimInstance->AttackMontage))
+	//	{
+	//		AnimInstance->Montage_Stop(0.0f, AnimInstance->AttackMontage);
+	//	}
+	//}
 	//auto AnimInstance = Cast<UMyAnimInstance>(GetMesh()->GetAnimInstance());
 	//if (AnimInstance)
 	//{
@@ -260,6 +261,7 @@ void AMyCharacter::OnAttackMontageEnded(UAnimMontage* Montage, bool bInterrupted
 {
 	if (IsAttacking == false) return;
 	IsAttacking = false;
+	OnAttackEnd.Broadcast();
 	UE_LOG(LogTemp, Log, TEXT("MontageEnd %s"), (IsAttacking ? TEXT("true") : TEXT("false")));
 }
 
